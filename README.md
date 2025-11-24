@@ -89,21 +89,63 @@ Typing Indicators: Watch dots animate when others type
 ##📁 Project Structure
 ```
 socketio-chat/
-├── client/                 # React frontend
+├── client/
+│   ├── public/
 │   ├── src/
-│   │   ├── components/     # UI components
-│   │   ├── context/        # State management
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── pages/          # Page components
-│   │   └── socket/         # Socket.io client
-│   └── package.json
-├── server/                 # Express backend
-│   ├── config/             # Socket configuration
-│   ├── controllers/        # Business logic
-│   ├── models/             # Data models
-│   ├── socket/             # Socket event handlers
-│   └── server.js           # Entry point
+│   │   ├── components/
+│   │   │   ├── Chat/
+│   │   │   │   ├── ChatRoom.jsx
+│   │   │   │   ├── MessageList.jsx
+│   │   │   │   ├── MessageInput.jsx
+│   │   │   │   ├── UserList.jsx
+│   │   │   │   └── TypingIndicator.jsx
+│   │   │   ├── Auth/
+│   │   │   │   └── LoginForm.jsx
+│   │   │   └── UI/
+│   │   │       ├── Notification.jsx
+│   │   │       └── LoadingSpinner.jsx
+│   │   ├── context/
+│   │   │   └── SocketContext.jsx
+│   │   ├── hooks/
+│   │   │   ├── useSocket.js
+│   │   │   └── useNotifications.js
+│   │   ├── pages/
+│   │   │   ├── Login.jsx
+│   │   │   ├── Chat.jsx
+│   │   │   └── PrivateChat.jsx
+│   │   ├── socket/
+│   │   │   └── socket.js
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   └── main.jsx
+│   ├── index.html
+│   ├── vite.config.js
+│   ├── package.json
+│   └── .env
+├── server/
+│   ├── config/
+│   │   └── socket.js
+│   ├── controllers/
+│   │   └── chatController.js
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Message.js
+│   │   └── Room.js
+│   ├── socket/
+│   │   └── handlers/
+│   │       ├── chatHandlers.js
+│   │       ├── userHandlers.js
+│   │       └── roomHandlers.js
+│   ├── utils/
+│   │   ├── helpers.js
+│   │   └── rateLimiter.js
+│   ├── server.js
+│   ├── package.json
+│   └── .env
+├── .gitignore
 └── README.md
+
+
 ##🔌 API Endpoints
 Method	Endpoint	Description
 GET	/api/health	Server health check
