@@ -35,7 +35,7 @@ Installation
 Clone the repository
 
 bash
-git clone <your-repo-url>
+git clone https://github.com/PLP-MERN-Stack-Development/real-time-communication-with-socket-io-reubenm597.git
 cd socketio-chat
 Install dependencies
 
